@@ -269,7 +269,7 @@ After setting up the virtual environment, activate it to begin installing depend
 
 On Windows :
 ```bash
-.venv\Scripts\activate
+.\.venv\Scripts\activate
 ```
 
 On macOS/Linux :
