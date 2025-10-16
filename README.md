@@ -25,16 +25,15 @@
 <hr>
 
 ## Overview
-- A production-ready content-based movie recommender system built with clean coding practices, modular design, proper version control and deployed as a web application.
-- It analyzes metadata of 5000+ movies such as genres, cast, crew, keywords and overview to recommend top 5 similar movies based on a user-selected movie.
+- Developed a content-based movie recommender system with clean coding practices, modular design and proper version control, deployed as a user-friendly web application.
+- Processes metadata from 5,000+ movies including title, keywords, genres, cast, crew and overview to recommend the top 5 similar movies based on a user-selected title.
 - The system uses techniques like [`CountVectorizer`](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html) for text vectorization and [`cosine_similarity`](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html) to find similarity between movies.
-- The project not only focuses on functionality but on building a clean, scalable and production ready solution, applying industry standard practices.
 
 <hr>
 
 ## Working
 
-- The dataset contains metadata for each movie including keywords, genres, cast, crew and overview.
+- The dataset contains metadata of each movie including title, keywords, genres, cast, crew and overview.
 
 <img src='https://github.com/user-attachments/assets/7196153c-f0a8-46cb-b47f-204b5db0cf46' title='Screenshot-1'>
 
@@ -45,15 +44,15 @@
 - Text preprocessing is applied to the `tags` column :
   - All text is converted to lowercase (e.g., `"Action, Thriller"` becomes `"action, thriller"`).
   - Spaces between words are removed (e.g., `"action movie"` becomes `"actionmovie"`).
-  - Stemming is performed using [`PorterStemmer`](https://www.nltk.org/howto/stem.html) to reduce words to their root form.
+  - Stemming is performed to reduce words to their root form (e.g., `"running"` becomes `"run"`).
   
 <img src='https://github.com/user-attachments/assets/54710f7c-b354-480f-b4be-b21b6333bacb' title='Screenshot-3'>
 
 - CountVectorizer is used to convert the `tags` column into numerical feature vectors.
-- Cosine similarity is used to calculate similarity between the vector representations of all the movies.
+- CosineSimilarity is used to calculate similarity between the vector representations of all the movies.
 - The resulting similarity matrix is serialized and saved as a `.pkl` file for efficient loading during recommendation.
 - A Streamlit web application is built to provide an interactive interface for movie selection and recommendation :
-  - User select a movie from the dropdown list.
+  - User selects a movie from the dropdown list.
   - The system recommends top 5 most similar movies based on the similarity score.
 - Movie posters are fetched using the TMDB API to enhance the visual appeal of the recommendations.
  
@@ -67,7 +66,7 @@
 - The project follows a modular approach by organizing modules into a dedicated `utils/` directory.
 - Each module in `utils/` directory is responsible for a specific task and includes :
   - Clear docstrings explaining functionality, expected inputs/outputs, returns and raises.
-  - Robust exception handling for better error tracing and debugging.
+  - Robust exception handling for better error handling and debugging.
 - Following the DRY (Don't Repeat Yourself) principle, this design : 
   - Reuse functions across notebooks and scripts without rewriting code.
   - Save development time and reduce redundancy.
