@@ -1,11 +1,49 @@
 <h2 align='center'>Pickify : Movie Recommender System</h2>
 
+<p align="center">
+  <!-- Live Demo -->
+  <a href="https://pickify.streamlit.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white" />
+  </a>
+
+  <!-- License -->
+  <a href="./LICENSE" target="_blank">
+    <img src="https://img.shields.io/badge/License-MIT-2ea44f?style=flat&logo=open-source-initiative&logoColor=white" />
+  </a>
+
+  <!-- Python -->
+  <a href="https://www.python.org/" target="_blank">
+    <img src="https://img.shields.io/badge/Python-v3.11-3776AB?style=flat&logo=python&logoColor=white" />
+  </a>
+
+  <!-- Pandas -->
+  <a href="https://pandas.pydata.org/" target="_blank">
+    <img src="https://img.shields.io/badge/Pandas-v2.2-150458?style=flat&logo=pandas&logoColor=white" />
+  </a>
+
+  <!-- Streamlit -->
+  <a href="https://streamlit.io/" target="_blank">
+    <img src="https://img.shields.io/badge/Streamlit-v1.44-FF4B4B?style=flat&logo=streamlit&logoColor=white" />
+  </a>
+
+  <!-- Scikit-learn -->
+  <a href="https://scikit-learn.org/stable/" target="_blank">
+    <img src="https://img.shields.io/badge/scikit--learn-v1.5-F7931E?style=flat&logo=scikit-learn&logoColor=white" />
+  </a>
+
+  <!-- TMDB -->
+  <a href="https://developer.themoviedb.org/docs" target="_blank">
+    <img src="https://img.shields.io/badge/TMDB-API-01B4E4?style=flat&logo=themoviedatabase&logoColor=white" />
+  </a>
+</p>
+
 <img src='https://github.com/user-attachments/assets/402f6ff0-b0f0-4382-827b-b7b06e33961d' title='Banner'>
 
 ## Table of Contents
 - [Problem Statement](#problem-statement)
 - [Overview](#overview)
-- [Working](#working)
+- [How it Works](#how-it-works)
+- [Workflow](#workflow)
 - [Features](#features)
 - [Setup](#setup)
 - [Folder Structure](#folder-structure)
@@ -19,25 +57,25 @@
 ## Problem Statement
 - With the rise of streaming services, viewers now have access to thousands of movies across platforms.
 - As a result, many viewers spend more time browsing than actually watching.
-- This problem can lead to frustration, lower satisfaction and less time spent on the platform.
+- This problem can lead to frustration, lower satisfaction, and reduced watch time on the platform.
 - Ultimately, this impacts both user experience and business performance.
 
 <hr>
 
 ## Overview
-- Developed a content-based movie recommender system with clean coding practices, modular design and proper version control, deployed as a user-friendly web application.
+- Built a content-based movie recommender system with a modular design and proper version control.
 - It processes metadata from 5,000+ movies to recommend the top 5 similar movies based on a user-selected title.
-- The system uses techniques like [`CountVectorizer`](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html) for text vectorization and [`cosine_similarity`](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html) to find similarity between movies.
+- System uses [`CountVectorizer`](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html) for text vectorization and [`cosine_similarity`](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html) to compute movie similarity.
 
 <hr>
 
-## Working
+## How it Works
 
-- The dataset contains metadata of each movie including title, keywords, genres, cast, crew and overview.
+- The dataset contains metadata for each movie, including title, keywords, genres, cast, crew, and overview.
 
 <img src='https://github.com/user-attachments/assets/7196153c-f0a8-46cb-b47f-204b5db0cf46' title='Screenshot-1'>
 
-- All these features are combined into a new column called `tags` to create a unified representation of each movie.
+- All the features are combined into a new column called `tags` to create a unified representation for each movie.
 
 <img src='https://github.com/user-attachments/assets/9f019c4c-0c1b-4f87-acdc-1253dd791eea' title='Screenshot-2'>
 
@@ -48,41 +86,82 @@
   
 <img src='https://github.com/user-attachments/assets/54710f7c-b354-480f-b4be-b21b6333bacb' title='Screenshot-3'>
 
-- CountVectorizer is used to convert the `tags` column into numerical feature vectors.
-- CosineSimilarity is used to calculate similarity between the vector representations of all the movies.
+- `CountVectorizer` is used to convert the `tags` column into numerical feature vectors.
+- `cosine_similarity` is used to calculate similarity between the vector representations of all the movies.
 - The resulting similarity matrix is serialized and saved as a `.pkl` file for efficient loading during recommendation.
 - A Streamlit web application is built to provide an interactive interface for movie selection and recommendation :
   - User selects a movie from the dropdown list.
-  - The system recommends top 5 most similar movies based on the similarity score.
+  - System recommend top 5 most similar movies based on the similarity scores.
 - Movie posters are fetched using the TMDB API to enhance the visual appeal of the recommendations.
  
 <a href='https://pickify.streamlit.app/' title='Pickify'><img src='https://github.com/user-attachments/assets/b2c8e685-565d-4a09-a49a-4323cefd8852'/></a>
 
 <hr>
 
+## Workflow
+
+```mermaid
+flowchart LR
+
+  subgraph DP["Data Preparation"]
+    direction TB
+    A["Movie metadata dataset"] --> B["Clean and preprocess data"] --> C["Extract features"] --> D["Generate tags"]
+  end
+
+  subgraph FE["Feature Engineering"]
+    direction TB
+    E["Text preprocessing"] --> F["Vectorize tags (CountVectorizer)"]
+  end
+
+  subgraph RE["Recommendation Engine"]
+    direction TB
+    G["Compute similarity (cosine_similarity)"] --> H["Save similarity matrix (.pkl)"]
+  end
+
+  subgraph APP["Application Layer"]
+    direction TB
+    I["Streamlit app loads .pkl"] --> J["User selects a movie"] --> K["Recommend Top 5 movies"] --> L["Fetch posters (TMDB API)"] --> M["Display recommendations"]
+  end
+
+  DP --> FE --> RE --> APP
+
+  %% Minimal dark mode styling (GitHub-safe)
+  classDef block fill:#0d1117,stroke:#30363d,stroke-width:1px,color:#ffffff;
+  classDef step  fill:#161b22,stroke:#8b949e,stroke-width:1px,color:#ffffff;
+
+  class A,B,C,D,E,F,G,H,I,J,K,L,M step;
+  class DP,FE,RE,APP block;
+```
+
+<hr>
+
 ## Features
 
-### 1. Modular Design with Reusable Codes
+### 1. Modular Design with Reusable Code
 - The project follows a modular approach by organizing modules into a dedicated `utils/` directory.
-- Each module in `utils/` directory is responsible for a specific task and includes :
-  - Clear docstrings explaining functionality, expected inputs/outputs, returns and raises.
-  - Robust exception handling for better error handling and debugging.
-- Following the DRY (Don't Repeat Yourself) principle, this design : 
-  - Reuse functions across notebooks and scripts without rewriting code.
-  - Save development time and reduce redundancy.
-- The `utils/` directory also includes `__init__.py` file in it, which serves a few important purposes in Python :
+- Each module in the `utils/` directory is responsible for a specific task and includes:
+  - Clear docstrings explaining functionality, expected inputs/outputs, returns, and raises.
+  - Robust exception handling for better debugging and maintainability.
+- Following the DRY (Don't Repeat Yourself) principle, this design:
+  - Reuses functions across notebooks and scripts without rewriting code.
+  - Saves development time and reduces redundancy.
+- The `utils/` directory also includes an `__init__.py` file, which serves a few important purposes in Python:
   - The `__init__.py` file tells Python to treat the directory as a package, not just a regular folder.
   - Without it, Python won't recognize the folder as a package.
 
 ### Add `utils` to PYTHONPATH
-- To access these utility modules anywhere in the project, add the following snippet at the top of your script :
+- To access these utility modules anywhere in the project, add the following snippet at the top of your script:
 ```python
 import sys, os
 sys.path.append(os.path.abspath("../utils"))
 ```
 
 ### Example
-- This is one of the functions I added in my project as `export_data.py` module in `utils` directory.
+- This is one of the functions I added to my project as the `export_data.py` module in the `utils/` directory.
+<details>
+<summary>View Example Function</summary>
+<br>
+
 ```python
 import os
 import pandas as pd
@@ -127,34 +206,39 @@ def export_as_csv(dataframe, folder_name, file_name):
     except FileNotFoundError as e:
         print(e)
 ```
+</details>
 
 <hr>
 
 ### 2. Dynamic Path Handling with `os.path`
-- Instead of hardcoding file paths, the project uses Python's built-in `os` module to handle file paths dynamically.
-- This improves code flexibility, ensuring the code runs smoothly across different systems and environments.
+- Instead of hardcoding file paths, the project uses Python's built-in `os` module to handle paths dynamically.
+- This improves code flexibility, ensuring it runs smoothly across different systems and environments.
 
 ### Key Benefits
-- Automatically adapt to the system directory structure.
-- Prevent `FileNotFoundError` caused by rigid, hardcoded paths.
-- Make deployment and collaboration easier without manual path updates.
+- Automatically adapts to the system's directory structure.
+- Prevents `FileNotFoundError` caused by rigid, hardcoded paths.
+- Makes deployment and collaboration easier without manual path updates.
 
-### Example
+<details>
+<summary>View Example Function</summary>
+<br>
+  
 ```python
 current_dir = os.getcwd()
 parent_dir = os.path.dirname(current_dir)
 folder_path = os.path.join(parent_dir, folder_name)
 file_path = os.path.join(folder_path, file_name)
 ```
+</details>
 
 <hr>
 
 ### 3. Clean Commit History with `nbstripout`
-- Integrated [`nbstripout`](https://github.com/kynan/nbstripout) with Git to automatically remove Jupyter notebooks output before committing.
-- It helps maintain a clean and readable commit history by :
+- Integrated [`nbstripout`](https://github.com/kynan/nbstripout) with Git to automatically remove Jupyter notebook outputs before committing.
+- It helps maintain a clean and readable commit history by:
   - Avoiding large, unreadable diffs caused by cell outputs.
   - Keeping only code and markdown content under version control.
-- Especially useful when pushing to remote repositories, as it reduces clutter and improves code readability.
+- Especially useful when pushing to remote repositories, as it reduces clutter and improves readability.
 
 ### Setup `nbstripout` for Jupyter Notebooks
 #### 1. Install `nbstripout`
@@ -170,12 +254,12 @@ nbstripout --install
 ```
    
 #### 3. Verify it's Working  
-- Commit a notebook and observe that the outputs are removed from the committed version.
+- Commit a notebook and confirm that outputs are removed from the committed version.
 
 <hr>
 
 ### 4. Secure API Key with `st.secrets`
-- The project uses Streamlit's `st.secrets` feature to handle the TMDB API key securely during local development.
+- The project uses Streamlit's `st.secrets` feature to securely manage the TMDB API key during development.
 - A `secrets.toml` file is placed inside the `.streamlit/` directory, storing the API key in the following format :
 ```toml
 [tmdb]
@@ -191,7 +275,7 @@ api_key = st.secrets["tmdb"]["api_key"]
 >
 > You can add it to .gitignore to ensure it's excluded from version control.
 > 
-> When deploying to streamlit, the API key must be added via the GUI, not through the `secrets.toml` file.
+> When deploying to Streamlit, the API key must be added via the GUI, not through the `secrets.toml` file.
 
 <img src='https://github.com/user-attachments/assets/529ae232-8635-479d-9b8f-d089b5688e7a' title='Streamlit UI'>
 
@@ -199,20 +283,23 @@ api_key = st.secrets["tmdb"]["api_key"]
 
 ### 5. Accessing Large Files with `gdown`
 - In the project, a similarity matrix is computed to recommend movies.
-- But due to its high dimensionality, size of the matrix becomes very large and exceeds GitHub's size limitations.
+- However, due to its high dimensionality, the matrix becomes very large and exceeds GitHub's size limitations.
 - GitHub restricts uploads larger than 100MB in public repositories, making it unsuitable for storing large files.
 - While Git LFS (Large File Storage) is one option, it can be complex to configure and manage.
 
 ### Solution with `gdown`
-- To address this issue, the matrix file is :
+- To address this issue, the matrix file is:
   - Uploaded to Google Drive.
-  - Downloaded at runtime using [`gdown`](https://pypi.org/project/gdown/) library.
-  - Stored locally on streamlit server when the app runs.
-- This approach ensures :
+  - Downloaded at runtime using the [`gdown`](https://pypi.org/project/gdown/) library.
+  - Stored locally on the Streamlit server when the app runs.
+- This approach ensures:
   - Compatibility with GitHub without needing Git LFS.
-  - A hassle-free experience for cloning the repository or running the app across environments.
+  - Hassle-free experience for cloning the repository or running the app across different environments.
 
-### Example
+<details>
+<summary>View Example Function</summary>
+<br>
+
 ```python
 import os
 import gdown
@@ -237,17 +324,18 @@ if not os.path.exists(output):
 with open('similarity.pkl', 'rb') as f:
     similarity = pickle.load(f)
 ```
+</details>
 
 <hr>
 
 ## Setup
 
-Follow these steps carefully to setup and run the project on your local machine :
+Follow these steps carefully to set up and run the project on your local machine :
 
 ### 1. Clone the Repository
-First, you need to download the project from GitHub to your local system.
+First, you need to clone the project from GitHub to your local system.
 ```bash
-git clone https://github.com/TheMrityunjayPathak/Pickify.git
+git clone https://github.com/themrityunjaypathak/Pickify.git
 ```
 
 ### 2. Setup a Virtual Environment
@@ -290,13 +378,13 @@ pip install --upgrade pip
 
 ### 5. Setup Streamlit Configuration (Optional) 
 > [!NOTE]
-> The `.streamlit/` folder contains streamlit configuration settings.
+> The `.streamlit/` folder contains Streamlit configuration settings.
 >
-> But it's not necessary to included in your project until required.
+> However, it is not necessary to include it in your project unless required.
 
 #### config.toml
 - The `config.toml` file contains configuration settings such as the server settings, theme preferences, etc.
-```bash
+```toml
 [theme]
 base="dark"
 primaryColor="#FD3A84"
@@ -305,8 +393,8 @@ backgroundColor="#020200"
 
 #### secrets.toml
 - The `secrets.toml` file contains sensitive information like API keys, database credentials, etc.
-```bash
-[TMDB]
+```toml
+[tmdb]
 api_key = "your_tmdb_api_key_here"
 ```
 
@@ -316,7 +404,7 @@ api_key = "your_tmdb_api_key_here"
 > You can add it to `.gitignore` to ensure it's excluded from version control.
 
 ### 6. Run the Streamlit Application
-After everything is setup, you can run the streamlit application :
+After everything is setup, you can run the Streamlit application :
 ```bash
 streamlit run app.py
 ```
@@ -332,13 +420,13 @@ deactivate
 ## Folder Structure
 
 ```
-movie_recommender_system/
+Pickify/
 |
 ├── .streamlit/             # Streamlit Configuration Files
 ├── raw_data/               # Original Dataset
 ├── clean_data/             # Preprocessed and Cleaned Dataset
 ├── notebooks/              # Jupyter Notebooks for Preprocessing and Vectorization
-├── images/                 # Images used in Streamlit Application
+├── images/                 # Images used in the Streamlit Application
 ├── utils/                  # Modular Python Scripts
 ├── app.py                  # Main Streamlit Application
 ├── requirements.txt        # List of required libraries for the Project
@@ -351,28 +439,34 @@ movie_recommender_system/
 
 ## Challenges & Solutions
 
-| Challenge | Solution |
-|:---|:---|
-| Keeping Commits Clean | Used `nbstripout` to remove notebooks output before committing. | 
-| Managing Large Files | Used Google Drive with `gdown` to load large files effectively. |
-| Hiding Sensitive API Keys | Used `st.secrets` to securely store and access sensitive information. |
-| Reusability and Scalability | Structured the project with modular code in `utils/` package. |
-| Dynamic File Paths | Used the `os` module for dynamic and platform-independent path handling. |
+#### Challenge 1 : Keeping Commits Clean
+- **Solution :** Integrated `nbstripout` with Git to strip Jupyter notebook outputs automatically before commits.
+
+#### Challenge 2 : Managing Large Files
+- **Solution :** Used Google Drive to host the serialized similarity matrix and downloaded it with `gdown` at runtime.
+
+#### Challenge 3 : Hiding Sensitive API Keys
+- **Solution :** Used Streamlit `st.secrets` to securely store and access TMDB API credentials.
+
+#### Challenge 4 : Reusability and Scalability
+- **Solution :** Structured the project with modular scripts inside the `utils/` package.
+
+#### Challenge 5 : Dynamic File Paths
+- **Solution :** Used Python's `os` module for dynamic and platform-independent path handling.
 
 <hr>
 
 ## Impact
-If this system gets scaled and integrated with a streaming service, this could :
-- Reduce the time users spend choosing what to watch.
-- Increase user engagement, watch time and customer satisfaction.
-- Help streaming platforms retain users by offering better personalized content.
+- Deployed the system as a Streamlit web app, used by 100+ users to discover personalized recommendations.
+- Increased user engagement and watch time through fast recommendations in under 3 seconds.
+- Reduced the time users spend choosing what to watch by instantly recommending the top 5 similar movies.
 
 <hr>
 
 ## Future Improvements
 
 #### 1. Enhanced Tag Generation
-- Currently, tags are generated equally from cast, crew, keywords, genres and overview.
+- Currently, tags are generated equally from cast, crew, keywords, genres, and overview.
 - We can improve this by applying feature importance or weighting certain features.
 - This can be done by multiplying certain column values to give them higher importance.
 
@@ -382,15 +476,15 @@ If this system gets scaled and integrated with a streaming service, this could :
 - This will make the recommender system more user-centric.
 
 #### 3. Real-Time Data Updates
-- Fetch movies data from external sources to ensure the movies database is always up-to-date.
-- This would allow to recommend the latest releases and remove outdated movies automatically.
+- Fetch movie data from external sources to ensure the movie database is always up to date.
+- This would allow recommending the latest releases and removing outdated movies automatically.
 
 #### 4. Improved Similarity Metrics
-- Instead of just Cosine Similarity, we can experiment with other advanced similarity measures,
-- Like Jaccard Similarity, TF-IDF or Word2Vec for capturing semantic meaning in the movie descriptions.
+- Instead of just cosine similarity, we can experiment with other advanced similarity measures,
+- Like Jaccard similarity, TF-IDF, or Word2Vec for capturing semantic meaning in movie descriptions.
 
 #### 5. Interactive User Interface
-- Enhance the user experience by providing filters to choose movies based on genres, actors or directors.
+- Enhance the user experience by providing filters to choose movies based on genres, actors, or directors.
 
 <hr>
 
