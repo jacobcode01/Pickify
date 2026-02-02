@@ -233,32 +233,7 @@ file_path = os.path.join(folder_path, file_name)
 
 <hr>
 
-### 3. Clean Commit History with `nbstripout`
-- Integrated [`nbstripout`](https://github.com/kynan/nbstripout) with Git to automatically remove Jupyter notebook outputs before committing.
-- It helps maintain a clean and readable commit history by :
-  - Avoiding large, unreadable diffs caused by cell outputs.
-  - Keeping only code and markdown content under version control.
-- Especially useful when pushing to remote repositories, as it reduces clutter and improves readability.
-
-### Setup `nbstripout` for Jupyter Notebooks
-#### 1. Install `nbstripout`
-- Install it in your virtual environment using `pip`.
-```bash
-pip install nbstripout
-```
-
-#### 2. Enable it for your Git Repository
-- This sets up a Git filter to strip notebook output automatically on commits.
-```bash
-nbstripout --install
-```
-   
-#### 3. Verify it's Working  
-- Commit a notebook and confirm that outputs are removed from the committed version.
-
-<hr>
-
-### 4. Secure API Key with `st.secrets`
+### 3. Secure API Key with `st.secrets`
 - The project uses Streamlit's `st.secrets` feature to securely manage the TMDB API key during development.
 - A `secrets.toml` file is placed inside the `.streamlit/` directory, storing the API key in the following format :
 ```toml
@@ -281,7 +256,7 @@ api_key = st.secrets["tmdb"]["api_key"]
 
 <hr>
 
-### 5. Accessing Large Files with `gdown`
+### 4. Accessing Large Files with `gdown`
 - In the project, a similarity matrix is computed to recommend movies.
 - However, due to its high dimensionality, the matrix becomes very large and exceeds GitHub's size limitations.
 - GitHub restricts uploads larger than 100MB in public repositories, making it unsuitable for storing large files.
@@ -439,8 +414,8 @@ Pickify/
 
 ## Challenges & Solutions
 
-#### Challenge 1 : Keeping Commits Clean
-- **Solution :** Integrated `nbstripout` with Git to strip Jupyter notebook outputs automatically before commits.
+#### Challenge 1 : Dynamic File Paths
+- **Solution :** Used Python's `os` module for dynamic and platform-independent path handling.
 
 #### Challenge 2 : Managing Large Files
 - **Solution :** Used Google Drive to host the serialized similarity matrix and downloaded it with `gdown` at runtime.
@@ -450,9 +425,6 @@ Pickify/
 
 #### Challenge 4 : Reusability and Scalability
 - **Solution :** Structured the project with modular scripts inside the `utils/` package.
-
-#### Challenge 5 : Dynamic File Paths
-- **Solution :** Used Python's `os` module for dynamic and platform-independent path handling.
 
 <hr>
 
