@@ -117,7 +117,7 @@ Access the Streamlit Web Application [here](https://pickify.streamlit.app/) or C
 
 ## Workflow
 
-<img width="2315" height="1413" alt="image" src="https://github.com/user-attachments/assets/6e86eaa7-fd4e-4c45-ab66-f9e700fe0ef8" />
+<img alt="Mermaid Diagram" src="https://github.com/user-attachments/assets/aa5a4e5b-2a44-4aa3-a88a-84a14b220ba7">
 
 <hr>
 
