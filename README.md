@@ -120,24 +120,24 @@ Access the Streamlit Web Application [here](https://pickify.streamlit.app/) or C
 ```mermaid
 flowchart LR
 
-  subgraph DP["Data Preparation"]
+  subgraph DP["1. Data Preparation"]
     direction TB
-    A["Movie metadata dataset"] --> B["Clean and preprocess data"] --> C["Extract features"] --> D["Generate tags"]
+    A["Movie Metadata dataset"] --> B["Clean and Preprocess data"] --> C["Extract features"] --> D["Generate tags"]
   end
 
-  subgraph FE["Feature Engineering"]
+  subgraph FE["2. Feature Engineering"]
     direction TB
-    E["Text preprocessing"] --> F["Vectorize tags (CountVectorizer)"]
+    E["Text Preprocessing"] --> F["Vectorize tags (CountVectorizer)"]
   end
 
-  subgraph RE["Recommendation Engine"]
+  subgraph RE["3. Recommendation Engine"]
     direction TB
-    G["Compute similarity (cosine_similarity)"] --> H["Save similarity matrix (.pkl)"]
+    G["Compute Similarity (cosine_similarity)"] --> H["Save Similarity Matrix (.pkl)"]
   end
 
-  subgraph APP["Application Layer"]
+  subgraph APP["4. Application Layer"]
     direction TB
-    I["Streamlit app loads .pkl"] --> J["User selects a movie"] --> K["Recommend Top 5 movies"] --> L["Fetch posters (TMDB API)"] --> M["Display recommendations"]
+    I["Streamlit App loads .pkl"] --> J["User Selects a Movie"] --> K["System Recommends Top 5 Similar Movies"] --> L["Fetch Movie Posters (TMDB API)"] --> M["Display Recommendations"]
   end
 
   DP --> FE --> RE --> APP
