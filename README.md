@@ -184,7 +184,7 @@ sys.path.append(os.path.abspath("../utils"))
 ### Example
 - This is one of the functions I added to my project as the `export_data.py` module in the `utils/` directory.
 <details>
-<summary>View Example Function</summary>
+<summary>Click Here to View Example Function</summary>
 <br>
 
 ```python
@@ -245,7 +245,7 @@ def export_as_csv(dataframe, folder_name, file_name):
 - Makes deployment and collaboration easier without manual path updates.
 
 <details>
-<summary>View Example Function</summary>
+<summary>Click Here to View Code Snippet</summary>
 <br>
   
 ```python
@@ -277,11 +277,6 @@ api_key = st.secrets["tmdb"]["api_key"]
 > 
 > When deploying to Streamlit, the API key must be added via the GUI, not through the `secrets.toml` file.
 
-<details>
-<summary>Click Here</summary>
-<img src='https://github.com/user-attachments/assets/529ae232-8635-479d-9b8f-d089b5688e7a' title='Streamlit UI'>
-</details>
-
 <hr>
 
 ### 4. Accessing Large Files with `gdown`
@@ -300,7 +295,7 @@ api_key = st.secrets["tmdb"]["api_key"]
   - Hassle-free experience for cloning the repository or running the app across different environments.
 
 <details>
-<summary>View Example Function</summary>
+<summary>Click Here to View Code Snippet</summary>
 <br>
 
 ```python
@@ -443,16 +438,16 @@ Pickify/
 ## Challenges & Solutions
 
 #### Challenge 1 : Dynamic File Paths
-- **Solution :** Used Python's `os` module for dynamic, platform-independent path handling.
+- **Solution ➪** Used Python's `os` module for dynamic, platform-independent path handling.
 
 #### Challenge 2 : Managing Large Files
-- **Solution :** Used Google Drive to host the serialized similarity matrix and downloaded it at runtime using `gdown`.
+- **Solution ➪** Used Google Drive to host the serialized similarity matrix and download it at runtime using `gdown`.
 
 #### Challenge 3 : Hiding Sensitive API Keys
-- **Solution :** Used Streamlit `st.secrets` to securely store and access TMDB API credentials.
+- **Solution ➪** Used Streamlit `st.secrets` to securely store and access TMDB API credentials.
 
 #### Challenge 4 : Reusability and Scalability
-- **Solution :** Structured the project with modular scripts inside the `utils/` package.
+- **Solution ➪** Structured the project with modular scripts inside the `utils/` package.
 
 <hr>
 
