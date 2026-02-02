@@ -117,38 +117,7 @@ Access the Streamlit Web Application [here](https://pickify.streamlit.app/) or C
 
 ## Workflow
 
-```mermaid
-flowchart LR
-
-  subgraph DP["1. Data Preparation"]
-    direction TB
-    A["Movie Metadata dataset"] --> B["Clean and Preprocess data"] --> C["Extract features"] --> D["Generate tags"]
-  end
-
-  subgraph FE["2. Feature Engineering"]
-    direction TB
-    E["Text Preprocessing"] --> F["Vectorize tags (CountVectorizer)"]
-  end
-
-  subgraph RE["3. Recommendation Engine"]
-    direction TB
-    G["Compute Similarity (cosine_similarity)"] --> H["Save Similarity Matrix (.pkl)"]
-  end
-
-  subgraph APP["4. Application Layer"]
-    direction TB
-    I["Streamlit App loads .pkl"] --> J["User Selects a Movie"] --> K["System Recommends Top 5 Similar Movies"] --> L["Fetch Movie Posters (TMDB API)"] --> M["Display Recommendations"]
-  end
-
-  DP --> FE --> RE --> APP
-
-  %% Minimal dark mode styling (GitHub-safe)
-  classDef block fill:#0d1117,stroke:#30363d,stroke-width:1px,color:#ffffff;
-  classDef step  fill:#161b22,stroke:#8b949e,stroke-width:1px,color:#ffffff;
-
-  class A,B,C,D,E,F,G,H,I,J,K,L,M step;
-  class DP,FE,RE,APP block;
-```
+[![](https://mermaid.ink/img/pako:eNqFVNtO20AQ_ZXRIiSQFuRLLsRIlYAkXCNFgfahTVVt7EmyYu21dteQgPj3ztokLUXQPMT2zDlnzs6M_cxSnSFL2Fzpx3QpjIObybSYFgC2mi2MKJfQH_-Ysr5wAsYGS2GEk7qYsp8eBJBJg6mPwN1pEzkh-Eg_SIQROpF5ov-z6IgEBwdf4JQQZwpFAaLIalWjU7S2xm1AZwQarJwRqYM5ClcZtJtcn3LnWCB5QXBiYV_tYJH9Y344IOiwocOgWMgC0chi8Yl_z7jDlfvLWEOoSw8p-40Y2sinpjbsnemqcNug2f_QzcRrTzDVeU7JupGvpj7xc-67pfOyorPeylwqYaRbw16qyRf-stvQ_sbjBTFuxcMb-Eg4I1ewd1jeq48Nnoz9sE_KUsm0sXcj1mg-cXfpazmDIlfSATFBaZHZ96U35q6I8NWigVtUpGVBQL0tm_y1F1xbhzlsO2XhTpfQ3og2hO023NQjdumyicNYE9tYqPzc4G7UP6VzXW7QI7_N0pZKrOHtKN5tUX_cjHxQXybNhVrUZHd3YSQLmQtFe2vuIac3CaxbK19171y6i2p2YMUc9z06VcLaPs5hpnR6D3OpVLITZGEYdrl1Rt9jshMHcSfOXh8PHmXmlklUrniqlTbJzrz-Hb9Ro5OW8KoWdsJZFG3Vjma9Vg__r7bVgxN-ys94nw_4kJ_zC37Jr_g1v-GjusyfwtQYPhzwyYBTM5oDHTPOFkZmLJkLZZGzHE0u_DN79rwpc0vMacgJ3fp2Tdm0eCFSKYrvWucscaYimtHVYrkVqUqaDPaloO3Mt1FDA0JTv3QsCeOgFmHJM1uxJAq6h50gjIJW96h9FPUiztYECtuHURx12lHc7QYxdfmFs6e6bHDYabXavVYrDnpR3OqEPc4wk_Qqj5ovY_2BfPkNNAyrvQ?type=png)](https://mermaid.live/edit#pako:eNqFVNtO20AQ_ZXRIiSQFuRLLsRIlYAkXCNFgfahTVVt7EmyYu21dteQgPj3ztokLUXQPMT2zDlnzs6M_cxSnSFL2Fzpx3QpjIObybSYFgC2mi2MKJfQH_-Ysr5wAsYGS2GEk7qYsp8eBJBJg6mPwN1pEzkh-Eg_SIQROpF5ov-z6IgEBwdf4JQQZwpFAaLIalWjU7S2xm1AZwQarJwRqYM5ClcZtJtcn3LnWCB5QXBiYV_tYJH9Y344IOiwocOgWMgC0chi8Yl_z7jDlfvLWEOoSw8p-40Y2sinpjbsnemqcNug2f_QzcRrTzDVeU7JupGvpj7xc-67pfOyorPeylwqYaRbw16qyRf-stvQ_sbjBTFuxcMb-Eg4I1ewd1jeq48Nnoz9sE_KUsm0sXcj1mg-cXfpazmDIlfSATFBaZHZ96U35q6I8NWigVtUpGVBQL0tm_y1F1xbhzlsO2XhTpfQ3og2hO023NQjdumyicNYE9tYqPzc4G7UP6VzXW7QI7_N0pZKrOHtKN5tUX_cjHxQXybNhVrUZHd3YSQLmQtFe2vuIac3CaxbK19171y6i2p2YMUc9z06VcLaPs5hpnR6D3OpVLITZGEYdrl1Rt9jshMHcSfOXh8PHmXmlklUrniqlTbJzrz-Hb9Ro5OW8KoWdsJZFG3Vjma9Vg__r7bVgxN-ys94nw_4kJ_zC37Jr_g1v-GjusyfwtQYPhzwyYBTM5oDHTPOFkZmLJkLZZGzHE0u_DN79rwpc0vMacgJ3fp2Tdm0eCFSKYrvWucscaYimtHVYrkVqUqaDPaloO3Mt1FDA0JTv3QsCeOgFmHJM1uxJAq6h50gjIJW96h9FPUiztYECtuHURx12lHc7QYxdfmFs6e6bHDYabXavVYrDnpR3OqEPc4wk_Qqj5ovY_2BfPkNNAyrvQ)
 
 <hr>
 
