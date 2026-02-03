@@ -68,10 +68,10 @@
 - The dataset contains metadata for each movie, including title, keywords, genres, cast, crew, and overview.
 
 <details>
-<summary>Click Here</summary>
+<summary>Click Here to view the Data</summary>
 &nbsp;
-  
-<img src='https://github.com/user-attachments/assets/7196153c-f0a8-46cb-b47f-204b5db0cf46' title='Screenshot-1'>
+
+<img src='https://github.com/user-attachments/assets/b3ad9765-18db-4a52-b09a-6ae7223d0a1e' title='Screenshot-1'>
 </details>
 
 - All the features are combined into a new column called `tags` to create a unified representation for each movie.
