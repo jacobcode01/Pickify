@@ -1,43 +1,36 @@
 <h2 align='center'>Pickify : Movie Recommender System</h2>
 
 <p align="center">
-  <!-- Live Demo -->
   <a href="https://pickify.streamlit.app/" target="_blank">
     <img src="https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white">
   </a>
 
-  <!-- Python -->
   <a href="https://www.python.org/" target="_blank">
     <img src="https://img.shields.io/badge/Python-v3.11-3776AB?style=flat&logo=python&logoColor=white">
   </a>
 
-  <!-- Pandas -->
   <a href="https://pandas.pydata.org/" target="_blank">
     <img src="https://img.shields.io/badge/Pandas-v2.2-150458?style=flat&logo=pandas&logoColor=white">
   </a>
 
-  <!-- Streamlit -->
   <a href="https://streamlit.io/" target="_blank">
     <img src="https://img.shields.io/badge/Streamlit-v1.44-FF4B4B?style=flat&logo=streamlit&logoColor=white">
   </a>
 
-  <!-- Scikit-learn -->
   <a href="https://scikit-learn.org/stable/" target="_blank">
     <img src="https://img.shields.io/badge/scikit--learn-v1.5-F7931E?style=flat&logo=scikit-learn&logoColor=white">
   </a>
 
-  <!-- Git -->
   <a href="https://git-scm.com/" target="_blank">
     <img src="https://img.shields.io/badge/Git-v2.47-F05032?style=flat&logo=git&logoColor=white">
   </a>
 
-  <!-- TMDB -->
   <a href="https://developer.themoviedb.org/docs" target="_blank">
     <img src="https://img.shields.io/badge/TMDB-API-01B4E4?style=flat&logo=themoviedatabase&logoColor=white">
   </a>
 </p>
 
-<img src='https://github.com/user-attachments/assets/402f6ff0-b0f0-4382-827b-b7b06e33961d' title='Banner'>
+<img src="https://github.com/user-attachments/assets/402f6ff0-b0f0-4382-827b-b7b06e33961d" title="Banner">
 
 ## Table of Contents
 - [Problem Statement](#problem-statement)
@@ -57,15 +50,16 @@
 ## Problem Statement
 - With the rise of streaming services, viewers now have access to thousands of movies across platforms.
 - As a result, many viewers spend more time browsing than actually watching.
-- This problem can lead to frustration, lower satisfaction and reduced watch time on the platform.
-- Ultimately, this impacts both user experience and business performance.
+- This leads to frustration, lower satisfaction, and reduced watch time on the platform.
+- Ultimately, this affects both user experience and platform engagement.
 
 <hr>
 
 ## Overview
-- Built a content-based movie recommender system with a modular design and proper version control.
-- It processes metadata from 5,000+ movies to recommend the top 5 similar movies based on a user-selected title.
-- The system uses [`CountVectorizer`](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html) for text vectorization and [`cosine_similarity`](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html) to compute movie similarity.
+- Built a content-based movie recommender system trained on 5,000+ movie metadata records.
+- Generated the top 5 similar titles for any selected movie in under 3 seconds using cosine similarity.
+- Integrated the TMDB API to dynamically fetch and display movie posters, improving the user experience.
+- Deployed the system as a Streamlit web app, enabling users to explore personalized movie suggestions.
 
 <hr>
 
@@ -122,10 +116,9 @@ Access the Streamlit Web Application [here](https://pickify.streamlit.app/) or C
 <hr>
 
 ## Impact
+- Served 100+ users through a deployed web app, turning a notebook model into a live recommendation system.
 - Delivered movie recommendations in under 3 seconds, ensuring a fast and smooth user experience.
-- Reduced the time users spend browsing by suggesting the top 5 most similar movies for any selected title.
-- Deployed the system as a Streamlit web app, used by 100+ users to discover personalized movie suggestions.
-- Demonstrated how a notebook model can move from experimentation to a live recommendation system.
+- Reduced browsing time by instantly suggesting the top 5 most similar movies for any selected title.
 
 <hr>
 
