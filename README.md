@@ -400,16 +400,16 @@ Pickify/
 ## Challenges & Solutions
 
 #### Challenge 1 : Dynamic File Paths
-- **Solution ➪** Used Python's `os` module for dynamic, platform-independent path handling.
+- **Solution :** Used Python's `os` module for dynamic, platform-independent path handling.
 
 #### Challenge 2 : Reusability and Scalability
-- **Solution ➪** Structured the project with modular scripts inside the `utils/` package.
+- **Solution :** Structured the project with modular scripts inside the `utils/` package.
 
 #### Challenge 3 : Hiding Sensitive API Keys
-- **Solution ➪** Used Streamlit `st.secrets` to securely store and access TMDB API credentials.
+- **Solution :** Used Streamlit `st.secrets` to securely store and access TMDB API credentials.
 
 #### Challenge 4 : Managing Large Files
-- **Solution ➪** Used Google Drive to host the serialized similarity matrix and download it at runtime using `gdown`.
+- **Solution :** Used Google Drive to host the serialized similarity matrix and download it at runtime using `gdown`.
 
 <hr>
 
