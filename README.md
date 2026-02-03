@@ -90,7 +90,7 @@
 
 <details>
 <summary>Click Here to view the Data</summary>
-&nbsp;
+<br>
 
 <img src='https://github.com/user-attachments/assets/b19384f9-62e4-40dd-806b-d23038cf2c5c' title='Screenshot-3'>
 </details>
