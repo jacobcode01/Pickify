@@ -65,7 +65,7 @@
 
 ## How it Works
 
-- The dataset contains metadata for each movie, including title, keywords, genres, cast, crew, and overview.
+- The dataset contains metadata for each movie including title, keywords, genres, cast, crew, and overview.
 
 <details>
 <summary>Click Here to view the Data</summary>
@@ -77,10 +77,10 @@
 - All the features are combined into a new column called `tags` to create a unified representation for each movie.
 
 <details>
-<summary>Click Here</summary>
+<summary>Click Here to view the Data</summary>
 &nbsp;
 
-<img src='https://github.com/user-attachments/assets/9f019c4c-0c1b-4f87-acdc-1253dd791eea' title='Screenshot-2'>
+<img src='https://github.com/user-attachments/assets/9e3bb855-324b-4d7c-ae58-6884bc4c8038' title='Screenshot-2'>
 </details>
 
 - Text preprocessing is applied to the `tags` column :
@@ -89,10 +89,10 @@
   - Stemming is performed to reduce words to their root form (e.g., `"running"` becomes `"run"`).
 
 <details>
-<summary>Click Here</summary>
+<summary>Click Here to view the Data</summary>
 &nbsp;
 
-<img src='https://github.com/user-attachments/assets/54710f7c-b354-480f-b4be-b21b6333bacb' title='Screenshot-3'>
+<img src='https://github.com/user-attachments/assets/426a094d-8893-4772-9295-8eb4240f349c' title='Screenshot-3'>
 </details>
 
 - `CountVectorizer` is used to convert the `tags` column into numerical feature vectors.
