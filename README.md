@@ -69,16 +69,16 @@
 
 <details>
 <summary>Click Here to view the Data</summary>
-&nbsp;
+<br>
 
-<img src='https://github.com/user-attachments/assets/48afc0f8-3a31-47e1-8392-108480021d66' title='Screenshot-1'>
+<img src='https://github.com/user-attachments/assets/c945f7a6-2f3b-4f66-bbeb-89ca1a071073' title='Screenshot-1'>
 </details>
 
 - All the features are combined into a new column called `tags` to create a unified representation for each movie.
 
 <details>
 <summary>Click Here to view the Data</summary>
-&nbsp;
+<br>
 
 <img src='https://github.com/user-attachments/assets/18fae5c0-1885-455f-a2ea-019aaa1741aa' title='Screenshot-2'>
 </details>
