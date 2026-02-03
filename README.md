@@ -92,7 +92,7 @@
 <summary>Click Here to view the Data</summary>
 &nbsp;
 
-<img src='https://github.com/user-attachments/assets/426a094d-8893-4772-9295-8eb4240f349c' title='Screenshot-3'>
+<img src='https://github.com/user-attachments/assets/b19384f9-62e4-40dd-806b-d23038cf2c5c' title='Screenshot-3'>
 </details>
 
 - `CountVectorizer` is used to convert the `tags` column into numerical feature vectors.
