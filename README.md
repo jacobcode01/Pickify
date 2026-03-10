@@ -1,24 +1,3 @@
-
-
-
-<img width="1919" height="905" alt="autoiq" src="https://github.com/user-attachments/assets/644f517d-c2a0-48ae-af3d-233df6ae0492" />
-<img width="1919" height="1079" alt="pickify" src="https://github.com/user-attachments/assets/fabdd016-1468-4071-b4d1-09fbf24e866d" />
-<img width="1441" height="810" alt="dashly" src="https://github.com/user-attachments/assets/cfa2b948-84dc-4ee8-b670-15e44b9cadc2" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <h2 align='center'>Pickify : Movie Recommender System</h2>
 
 <p align="center">
