@@ -1,4 +1,4 @@
-<h2 align='center'>Pickify : Movie Recommender System</h2>
+<img src="https://github.com/user-attachments/assets/402f6ff0-b0f0-4382-827b-b7b06e33961d" title="Banner">
 
 <p align="center">
   <a href="https://pickify.streamlit.app/" target="_blank">
@@ -29,8 +29,6 @@
     TMDB API
   </a>
 </p>
-
-<img src="https://github.com/user-attachments/assets/402f6ff0-b0f0-4382-827b-b7b06e33961d" title="Banner">
 
 ## Table of Contents
 - [Problem Statement](#problem-statement)
