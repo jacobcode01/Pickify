@@ -391,7 +391,7 @@ Pickify/
 ├── requirements.txt        # List of required libraries for the Project
 ├── README.md               # Detailed documentation of the Project
 ├── LICENSE                 # License specifying permissions and usage rights
-├── .gitignore              # All files and folders excluded from Git Tracking
+└── .gitignore              # All files and folders excluded from Git Tracking
 ```
 
 <hr>
