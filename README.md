@@ -8,6 +8,7 @@
 [![Scikit-Learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/stable/)
 [![NLTK](https://img.shields.io/badge/NLTK-NLP-8A2BE2?style=flat&logo=python&logoColor=white)](https://www.nltk.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![gdown](https://img.shields.io/badge/gdown-26A668?style=flat&logo=google-drive&logoColor=white)](https://pypi.org/project/gdown/)
 [![TMDB API](https://img.shields.io/badge/TMDB-API-01B4E4?style=flat&logo=themoviedatabase&logoColor=white)](https://developer.themoviedb.org/docs)
 [![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white)](https://git-scm.com/)
 
