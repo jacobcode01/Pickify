@@ -14,7 +14,7 @@
 
 </div>
 
-<a href="https://themrityunjaypathak.github.io/AutoIQ/"><img title="AutoIQ by Motor.co" src="https://github.com/user-attachments/assets/ff552d20-06e8-42c5-9804-2dffb58c36bd"></a>
+<a href="#"><img title="Churn AI : Customer Churn Prediction" src="https://github.com/jacobcode01/Pickify/blob/addb7b9824a1db0cbf334f7373553382b6f45dc8/borderful.png"></a>
 
 
 
