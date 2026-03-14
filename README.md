@@ -25,22 +25,22 @@ Churn AI/
 │
 ├── api/                          # FastAPI backend for serving model predictions
 │   ├── main.py                   # API endpoints (root, health, info, predict)
-│   ├── schema.py                 # Pydantic schemas for request and response validation
+│   ├── schema.py                 # Pydantic schemas for request/response validation
 │   ├── config.py                 # API configuration utilities
 │   ├── utils.py                  # Helper functions used by the API
-│   └── Dockerfile                # Docker image configuration for API deployment
+│   └── Dockerfile                # Docker configuration for building API image
 │
 ├── artifacts/                    # Saved model artifacts and evaluation metrics
 │   ├── models/
-│   │   └── pipe.joblib           # Trained Scikit-learn pipeline
+│   │   └── pipe.joblib           # Trained Scikit-learn pipeline used for prediction
 │   │
 │   └── metrics/
-│       └── metrics.json          # Model evaluation metrics and metadata
+│       └── metrics.json          # Model evaluation results and training metadata
 │
 ├── configs/                      # YAML configuration files used across the project
 │   ├── artifacts-config.yaml     # Artifact storage configuration
 │   ├── data-config.yaml          # Dataset paths and data settings
-│   ├── model-config.yaml         # Model and threshold configuration
+│   ├── model-config.yaml         # Model configuration and threshold settings
 │   └── training-config.yaml      # Training parameters and evaluation settings
 │
 ├── data/                         # Project datasets
@@ -52,12 +52,12 @@ Churn AI/
 │
 ├── frontend/                     # React frontend for user interaction
 │   │
-│   ├── public/
+│   ├── public/                   # Static assets used in the frontend
 │   │   ├── favicon.svg
 │   │   ├── hero-image.png
 │   │   └── logo.png
 │   │
-│   ├── src/
+│   ├── src/                      # React application source code
 │   │   ├── App.jsx
 │   │   ├── App.css
 │   │   ├── main.jsx
@@ -66,9 +66,9 @@ Churn AI/
 │   │   └── assets/
 │   │       └── react.svg
 │   │
-│   ├── Dockerfile                # Docker image configuration for frontend
+│   ├── Dockerfile                # Docker configuration for frontend container
 │   ├── nginx.conf                # Nginx configuration for serving frontend
-│   ├── package.json              # Node dependencies
+│   ├── package.json              # Node.js dependencies
 │   ├── package-lock.json
 │   ├── index.html
 │   ├── vite.config.js
@@ -76,8 +76,9 @@ Churn AI/
 │   └── .env.example              # Example environment variables
 │
 ├── notebooks/                    # Jupyter notebooks for experimentation
-│   ├── eda.ipynb                 # Exploratory Data Analysis
-│   └── model.ipynb               # Model experimentation and MLflow logging
+│   ├── eda.ipynb                 # Exploratory data analysis
+│   ├── model.ipynb               # Model experimentation and MLflow tracking
+│   └── ...                       # Additional research notebooks
 │
 ├── scripts/                      # Executable pipeline scripts
 │   ├── run_preprocessing.py      # Data preprocessing pipeline
@@ -87,19 +88,23 @@ Churn AI/
 │   │
 │   └── customer_churn/
 │       │
-│       ├── core/                 # Core utilities
-│       │   ├── config.py         # Project configuration loader
-│       │   └── logger.py         # Logging configuration
+│       ├── core/                 # Core utilities used across the project
+│       │   ├── __init__.py
+│       │   ├── config.py         # Configuration loader
+│       │   └── logger.py         # Logging setup
 │       │
-│       ├── data/                 # Data loading and preprocessing
+│       ├── data/                 # Data loading and preprocessing logic
+│       │   ├── __init__.py
 │       │   ├── loaders.py
 │       │   ├── preprocessing.py
 │       │   └── export.py
 │       │
 │       ├── features/             # Feature engineering utilities
+│       │   ├── __init__.py
 │       │   └── split.py
 │       │
 │       └── models/               # Model training and evaluation modules
+│           ├── __init__.py
 │           ├── pipeline.py
 │           ├── preprocessor.py
 │           ├── model_factory.py
@@ -108,7 +113,7 @@ Churn AI/
 │           └── target_encoding.py
 │
 ├── docker-compose.yaml           # Docker orchestration for API and frontend
-├── Makefile                      # Project commands (training, API, MLflow, etc.)
+├── Makefile                      # Project commands (training, MLflow, API, etc.)
 ├── pyproject.toml                # Python project configuration
 ├── uv.lock                       # Dependency lock file
 ├── mlflow.db                     # MLflow experiment tracking database
