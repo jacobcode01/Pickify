@@ -1,5 +1,4 @@
-
-<h3 align="center">Pickify : Movie Recommender System</h3>
+<h3 align="center" id="top">Pickify : Movie Recommender System</h3>
 
 <div align="center">
 
@@ -41,10 +40,10 @@
 <hr>
 
 ## Overview
-- Built a content-based movie recommender system trained on 5,000+ movie metadata records.
+- Built a content-based movie recommender system trained on \~4,800+ movie metadata records.
 - Generated the top 5 similar titles for any selected movie in under 3 seconds using cosine similarity.
 - Integrated the TMDB API to dynamically fetch and display movie posters, improving the user experience.
-- Deployed the system as a Streamlit web app, enabling users to explore personalized movie suggestions.
+- Deployed the system as a Streamlit web app, enabling users to explore relevant movie suggestions.
 
 <hr>
 
@@ -407,7 +406,7 @@ Pickify/
 - For example, certain columns can be scaled or repeated to increase their impact on similarity calculations.
 
 #### 2. User Preferences Integration
-- Introduce user-based data to generate more personalized recommendations.
+- Introduce user-based data to generate more relevant recommendations.
 - Collaborative filtering can suggest movies based on similarities between user preferences and behavior.
 - This would make the recommender system more adaptive and user-centric.
 
@@ -430,6 +429,6 @@ This project is licensed under the [MIT License](LICENSE). You are free to use a
 
 <div align='left'>
   
-**[`^        Scroll to Top       ^`](#pickify--movie-recommender-system)**
+**[`^        Scroll to Top       ^`](#top)**
 
 </div>
